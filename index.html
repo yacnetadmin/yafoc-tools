@@ -157,11 +157,11 @@
 
 <script>
   const tooltips = {
-    gTIME: `TIME — Time to Listen. Read the passage and sit quietly, listening for what God might be saying to you.`,
-    gASK: `ASK — Ask Questions. What does this passage say about God? What does it say about humanity? What’s my response? What do I need to confess or talk to God about?`,
-    gBELIEVE: `BELIEVE — What are the promises in this passage, and how do I stand on them?`,
-    gLISTEN: `LISTEN — Listen (again). Re-read the passage. What is God highlighting or solidifying in you?`,
-    gEXAMPLE: `EXAMPLE — Example to follow. How does this passage impact those around me? Who should I tell about this? What should I change about how I’m living?`
+    gTIME: `<strong>TIME</strong> — Time to Listen. Read the passage and sit quietly, listening for what God might be saying to you.`,
+    gASK: `<strong>ASK</strong> — Ask Questions. What does this passage say about God? What does it say about humanity? What’s my response? What do I need to confess or talk to God about?`,
+    gBELIEVE: `<strong>BELIEVE</strong> — What are the promises in this passage, and how do I stand on them?`,
+    gLISTEN: `<strong>LISTEN</strong> — Listen (again). Re-read the passage. What is God highlighting or solidifying in you?`,
+    gEXAMPLE: `<strong>EXAMPLE</strong> — Example to follow. How does this passage impact those around me? Who should I tell about this? What should I change about how I’m living?`
   };
 
   const tooltipEl = document.getElementById("tooltip");
@@ -172,7 +172,7 @@
       el.classList.add("interactive");
 
       const showTooltip = () => {
-        tooltipEl.innerText = tooltips[id];
+        tooltipEl.innerHTML = tooltips[id];
         tooltipEl.style.display = "block";
       };
 
@@ -189,12 +189,10 @@
     }
   });
 
-  // Click anywhere on tooltip to dismiss
+  // Allow user to click anywhere on tooltip to dismiss it
   tooltipEl.addEventListener("click", () => {
     tooltipEl.style.display = "none";
   });
 </script>
-
-
 </body>
 </html>
