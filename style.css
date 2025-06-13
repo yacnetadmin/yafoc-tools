@@ -13,7 +13,7 @@
     margin: 2rem auto;
     max-width: 100%;
     height: auto;
-    font-family: 'Libre Franklin', sans-serif; /* applies to text in SVGs too */
+    font-family: 'Libre Franklin', sans-serif;
   }
 
   .interactive:hover {
@@ -22,22 +22,25 @@
   }
 
   .tooltip {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    max-width: 500px;
-    transform: translate(-50%, -50%);
+    position: relative;
+    margin: 2rem auto 0 auto;
     background: rgba(0, 0, 0, 0.85);
     color: #fff;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 2rem;
     font-family: 'Libre Franklin', sans-serif;
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1.35rem;
+    line-height: 1.75;
     text-align: left;
     display: none;
     z-index: 9999;
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .tooltip strong {
+    font-weight: 600;
+    color: #ffa726;
   }
 </style>
