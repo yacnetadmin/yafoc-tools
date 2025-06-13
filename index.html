@@ -1,41 +1,74 @@
-<!--Practice Tools//-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YAFOC Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TABLE Tool</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .interactive:hover {
+      fill: #ffa726 !important;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      display: none;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    body {
+      position: relative;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>YAFOC Practice Tools</h1>
-  </header>
+  <h1>TABLE Tool</h1>
+  <p>Hover over each part of the table to see what it represents.</p>
 
-  <main>
-    <section id="table-tool">
-      <h2>TABLE</h2>
-      <p>Placeholder for interactive table tool (Time, Ask, Believe, Listen, Example).</p>
-    </section>
+  <div id="svg-container">
+    <!-- INLINE SVG GOES HERE -->
+    <!-- You can paste your cleaned SVG here directly from Inkscape -->
+    <!-- Or copy from the uploaded file as we've reviewed -->
+  </div>
 
-    <section id="pray-tool">
-      <h2>PRAY</h2>
-      <p>Placeholder for PRAY tool (Pause, Rejoice, Ask, Yield).</p>
-    </section>
+  <div id="tooltip" class="tooltip"></div>
 
-    <section id="bless-tool">
-      <h2>BLESS</h2>
-      <p>Placeholder for BLESS tool (Begin with Prayer, Listen with Care, Eat Together, Serve with Love, Share your Story).</p>
-    </section>
+  <script>
+    const tooltips = {
+  gTIME: `TIME — Time to Listen. Read the passage and sit quietly, listening for what God might be saying to you.`,
+  gASK: `ASK — Ask Questions. What does this passage say about God? What does it say about humanity? What’s my response? What do I need to confess or talk to God about?`,
+  gBELIEVE: `BELIEVE — What are the promises in this passage, and how do I stand on them?`,
+  gLISTEN: `LISTEN — Listen (again). Re-read the passage. What is God highlighting or solidifying in you?`,
+  gEXAMPLE: `EXAMPLE — Example to follow. How does this passage impact those around me? Who should I tell about this? What should I change about how I’m living?`
+};
 
-    <section id="story-tool">
-      <h2>The Story</h2>
-      <p>Placeholder for visual representation of Creation, Fall, Redemption, Restoration.</p>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 York Alliance Family of Churches</p>
-  </footer>
+    const tooltipEl = document.getElementById("tooltip");
+
+    Object.keys(tooltips).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.add("interactive");
+
+        el.addEventListener("mousemove", e => {
+          tooltipEl.style.display = "block";
+          tooltipEl.style.left = (e.pageX + 15) + "px";
+          tooltipEl.style.top = (e.pageY + 15) + "px";
+          tooltipEl.innerText = tooltips[id];
+        });
+
+        el.addEventListener("mouseleave", () => {
+          tooltipEl.style.display = "none";
+        });
+      }
+    });
+  </script>
 </body>
 </html>
