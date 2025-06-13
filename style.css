@@ -1,15 +1,11 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
+
   body {
-    position: relative;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Work Sans', system-ui, sans-serif;
     background-color: #f7f7f7;
     margin: 0;
     padding: 1rem;
-  }
-
-  .interactive:hover {
-    fill: #ffa726 !important;
-    cursor: pointer;
   }
 
   svg {
@@ -19,6 +15,11 @@
     height: auto;
   }
 
+  .interactive:hover {
+    fill: #ffa726 !important;
+    cursor: pointer;
+  }
+
   .tooltip {
     position: fixed;
     top: 50%;
@@ -26,16 +27,15 @@
     width: 90%;
     max-width: 500px;
     transform: translate(-50%, -50%);
-    background: white;
-    color: #111;
-    border: 2px solid #444;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
     border-radius: 10px;
+    padding: 1.5rem;
     font-size: 1.1rem;
-    line-height: 1.5;
-    display: none;
-    z-index: 2000;
+    line-height: 1.6;
     text-align: left;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   }
 </style>
