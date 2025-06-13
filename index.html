@@ -173,11 +173,11 @@
 
       const showTooltip = () => {
         tooltipEl.innerHTML = tooltips[id];
-        tooltipEl.style.display = "block";
+        tooltipEl.classList.add("visible");
       };
 
       const hideTooltip = () => {
-        tooltipEl.style.display = "none";
+        tooltipEl.classList.remove("visible");
       };
 
       el.addEventListener("mouseenter", showTooltip);
