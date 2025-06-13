@@ -46,9 +46,11 @@ svg {
   display: none;
   z-index: 10;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  width: 90%;
+  width: calc(100% - 2rem); /* New: ensures 1rem space on each side */
   max-width: 700px;
+  box-sizing: border-box; /* Important to include padding in width */
 }
+
 
 .tooltip.visible {
   display: block;
