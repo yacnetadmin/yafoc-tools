@@ -160,7 +160,7 @@
 
   </div>
 
-  <div id="tooltip" class="tooltip"></div>
+<div id="tooltip" class="tooltip"></div>
 
   <script>
     const tooltips = {
@@ -196,15 +196,8 @@
       }
     });
 
-    // Dismiss tooltip when clicking on it or anywhere outside
     tooltipEl.addEventListener("click", () => {
       tooltipEl.classList.remove("visible");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!tooltipEl.contains(e.target)) {
-        tooltipEl.classList.remove("visible");
-      }
     });
   </script>
 </body>
