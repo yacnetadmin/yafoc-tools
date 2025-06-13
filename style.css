@@ -21,23 +21,27 @@
     cursor: pointer;
   }
 
-  .tooltip {
-    position: relative;
-    margin: 2rem auto 0 auto;
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    border-radius: 10px;
-    padding: 2rem;
-    font-family: 'Libre Franklin', sans-serif;
-    font-size: 1.35rem;
-    line-height: 1.75;
-    text-align: left;
-    display: none;
-    z-index: 9999;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    width: 90%;
-    max-width: 600px;
-  }
+.tooltip {
+  position: relative;
+  margin: 2rem auto 0 auto;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.75;
+  text-align: left;
+  display: none; /* hidden by default */
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 600px;
+}
+
+.tooltip.visible {
+  display: block;
+}
 
   .tooltip strong {
     font-weight: 600;
