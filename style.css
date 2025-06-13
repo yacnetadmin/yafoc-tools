@@ -1,3 +1,4 @@
+/* Font import and base styles */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600&display=swap');
 
 body {
@@ -8,6 +9,12 @@ body {
   text-align: center;
 }
 
+/* Layout containers */
+#svg-container {
+  margin-top: 5vh;
+}
+
+/* SVG styling */
 svg {
   display: block;
   margin: 2rem auto;
@@ -17,13 +24,13 @@ svg {
   font-family: 'Libre Franklin', sans-serif;
 }
 
-/* Hover effect for interactive SVG parts */
+/* Interactivity */
 .interactive:hover {
   fill: #ffa726 !important;
   cursor: pointer;
 }
 
-/* Tooltip styling */
+/* Tooltip component */
 .tooltip {
   position: absolute;
   top: 2rem;
@@ -45,12 +52,11 @@ svg {
   box-sizing: border-box;
 }
 
-/* Show tooltip when active */
+/* Tooltip states and styling */
 .tooltip.visible {
   display: block;
 }
 
-/* Highlight bold parts in tooltip */
 .tooltip strong {
   font-weight: 600;
   color: #ffa726;
