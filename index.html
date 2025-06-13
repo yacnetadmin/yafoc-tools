@@ -156,34 +156,37 @@
   <div id="tooltip" class="tooltip"></div>
 
   <script>
-    const tooltips = {
-  gTIME: `TIME — Time to Listen. Read the passage and sit quietly, listening for what God might be saying to you.`,
-  gASK: `ASK — Ask Questions. What does this passage say about God? What does it say about humanity? What’s my response? What do I need to confess or talk to God about?`,
-  gBELIEVE: `BELIEVE — What are the promises in this passage, and how do I stand on them?`,
-  gLISTEN: `LISTEN — Listen (again). Re-read the passage. What is God highlighting or solidifying in you?`,
-  gEXAMPLE: `EXAMPLE — Example to follow. How does this passage impact those around me? Who should I tell about this? What should I change about how I’m living?`
-};
+  const tooltips = {
+    gTIME: `TIME — Time to Listen. Read the passage and sit quietly, listening for what God might be saying to you.`,
+    gASK: `ASK — Ask Questions. What does this passage say about God? What does it say about humanity? What’s my response? What do I need to confess or talk to God about?`,
+    gBELIEVE: `BELIEVE — What are the promises in this passage, and how do I stand on them?`,
+    gLISTEN: `LISTEN — Listen (again). Re-read the passage. What is God highlighting or solidifying in you?`,
+    gEXAMPLE: `EXAMPLE — Example to follow. How does this passage impact those around me? Who should I tell about this? What should I change about how I’m living?`
+  };
 
+  const tooltipEl = document.getElementById("tooltip");
 
-    const tooltipEl = document.getElementById("tooltip");
+  Object.keys(tooltips).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.add("interactive");
 
-    Object.keys(tooltips).forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.classList.add("interactive");
+      el.addEventListener("mouseenter", () => {
+        tooltipEl.innerText = tooltips[id];
+        tooltipEl.style.display = "block";
+      });
 
-        el.addEventListener("mousemove", e => {
-          tooltipEl.style.display = "block";
-          tooltipEl.style.left = (e.pageX + 15) + "px";
-          tooltipEl.style.top = (e.pageY + 15) + "px";
-          tooltipEl.innerText = tooltips[id];
-        });
+      el.addEventListener("mouseleave", () => {
+        tooltipEl.style.display = "none";
+      });
+    }
+  });
 
-        el.addEventListener("mouseleave", () => {
-          tooltipEl.style.display = "none";
-        });
-      }
-    });
-  </script>
+  // Click on tooltip to hide it
+  tooltipEl.addEventListener("click", () => {
+    tooltipEl.style.display = "none";
+  });
+</script>
+
 </body>
 </html>
