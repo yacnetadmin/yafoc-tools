@@ -20,9 +20,9 @@ h1, p {
 
 svg {
   display: block;
-  width: 80%;
+  margin: 2rem auto;
+  max-width: 90vw;
   height: auto;
-  font-family: 'Libre Franklin', sans-serif;
 }
 
 .interactive:hover {
