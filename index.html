@@ -155,7 +155,7 @@
 
   <div id="tooltip" class="tooltip"></div>
 
-  <script>
+<script>
   const tooltips = {
     gTIME: `TIME — Time to Listen. Read the passage and sit quietly, listening for what God might be saying to you.`,
     gASK: `ASK — Ask Questions. What does this passage say about God? What does it say about humanity? What’s my response? What do I need to confess or talk to God about?`,
@@ -171,22 +171,30 @@
     if (el) {
       el.classList.add("interactive");
 
-      el.addEventListener("mouseenter", () => {
+      const showTooltip = () => {
         tooltipEl.innerText = tooltips[id];
         tooltipEl.style.display = "block";
-      });
+      };
 
-      el.addEventListener("mouseleave", () => {
+      const hideTooltip = () => {
         tooltipEl.style.display = "none";
+      };
+
+      el.addEventListener("mouseenter", showTooltip);
+      el.addEventListener("mouseleave", hideTooltip);
+      el.addEventListener("touchstart", e => {
+        e.preventDefault();
+        showTooltip();
       });
     }
   });
 
-  // Click on tooltip to hide it
+  // Click anywhere on tooltip to dismiss
   tooltipEl.addEventListener("click", () => {
     tooltipEl.style.display = "none";
   });
 </script>
+
 
 </body>
 </html>
