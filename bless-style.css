@@ -1,0 +1,76 @@
+
+/* Font import and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600&display=swap');
+
+body {
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Layout containers */
+#stack-svg-container {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+#tags-svg-container {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+/* SVG styling */
+svg {
+  display: block;
+  margin: 2rem auto;
+  max-width: 90vw;
+  max-height: 60vh;
+  height: auto;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+/* Interactivity */
+.interactive:hover {
+  fill: #ffa726 !important;
+  cursor: pointer;
+}
+
+/* Tooltip component */
+.tooltip {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  width: calc(100% - 2rem);
+  max-width: 700px;
+  box-sizing: border-box;
+  transition: opacity 0.4s ease;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Tooltip states and styling */
+/*.tooltip.visible {
+ / display: block;
+}*/
+
+.tooltip strong {
+  font-weight: 600;
+  color: #ffa726;
+}
