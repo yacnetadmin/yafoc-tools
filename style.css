@@ -44,18 +44,26 @@ svg {
   font-size: 1.5rem;
   line-height: 1.7;
   text-align: center;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
   z-index: 10;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   width: calc(100% - 2rem);
   max-width: 700px;
   box-sizing: border-box;
+  transition: opacity 0.4s ease;
 }
 
-/* Tooltip states and styling */
 .tooltip.visible {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
+
+
+/* Tooltip states and styling */
+/*.tooltip.visible {
+ / display: block;
+}*/
 
 .tooltip strong {
   font-weight: 600;
