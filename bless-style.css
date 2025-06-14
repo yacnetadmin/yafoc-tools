@@ -37,10 +37,10 @@ svg {
 
 /* Tooltip component */
 .tooltip {
-  position: absolute;
-  top: 2rem;
+  position: fixed; /* Make it float relative to the viewport */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
   padding: 1.5rem 2rem;
@@ -63,7 +63,6 @@ svg {
   opacity: 1;
   pointer-events: auto;
 }
-
 
 /* Tooltip states and styling */
 /*.tooltip.visible {
