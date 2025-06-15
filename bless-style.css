@@ -23,8 +23,8 @@ body {
 }
 
 #stack-svg-container {
-  margin-top: 10vh;
-  margin-bottom: 5vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 #tags-svg-container {
@@ -36,8 +36,8 @@ body {
 #bless-descriptors {
   flex: 0 0 40vw;
   text-align: left;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 /* SVG styling */
