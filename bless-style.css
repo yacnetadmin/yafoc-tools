@@ -11,14 +11,35 @@ body {
 }
 
 /* Layout containers */
+
+#bless-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
 #stack-svg-container {
   margin-top: 10vh;
   margin-bottom: 5vh;
 }
+
 #tags-svg-container {
-  margin-top: 10vh;
-  margin-bottom: 5vh;
+  flex: 0 0 auto;
+  max-width: 40vw;
+  text-align: right;
 }
+
+#bless-descriptors {
+  flex: 0 0 40vw;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
 /* SVG styling */
 svg {
   display: block;
